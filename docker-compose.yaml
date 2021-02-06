@@ -12,8 +12,9 @@ services:
       MYSQL_DATABASE: db_example
       MYSQL_USER:  springuser
       MYSQL_PASSWORD: ThePassword
-    ports:
-      - 3306:3306
+    #ports:
+    #  - 3306:3306
+    #only internal port will be exposed
 
   sql-demo:
     image: sql-demo
