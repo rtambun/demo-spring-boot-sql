@@ -19,9 +19,9 @@ public class LocationInfo {
 
     private String location;
 
-    private String longitude;
+    private float longitude;
 
-    private String latitude;
+    private float latitude;
 
     public int getId() {
         return id;
@@ -35,13 +35,11 @@ public class LocationInfo {
         return location;
     }
 
-    public String getLongitude() {
+    public float getLongitude() {
         return longitude;
     }
 
-    public String getLatitude() {
-        return latitude;
-    }
+    public float getLatitude() { return latitude; }
 
     public void setId(int id) {
         this.id = id;
@@ -51,15 +49,13 @@ public class LocationInfo {
         this.name = name;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    public void setLocation(String location) { this.location = location; }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(float longitude) {
         this.longitude = longitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(float latitude) {
         this.latitude = latitude;
     }
 
