@@ -1,10 +1,7 @@
 package com.rtambun.accessingdatamysql.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rtambun.accessingdatamysql.dto.SearchResultByName;
 import com.rtambun.accessingdatamysql.dto.LocationInfoByLocation;
-import com.rtambun.accessingdatamysql.model.LocationInfo;
 import com.rtambun.accessingdatamysql.repository.LocationInfoRepository;
 import com.rtambun.accessingdatamysql.service.GetResultByLocation;
 import com.rtambun.accessingdatamysql.service.GetResultByName;
