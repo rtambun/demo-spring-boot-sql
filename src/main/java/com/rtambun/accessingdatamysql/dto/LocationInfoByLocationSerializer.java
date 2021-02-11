@@ -1,26 +1,26 @@
-package com.rtambun.accessingdatamysql;
+package com.rtambun.accessingdatamysql.dto;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+import com.rtambun.accessingdatamysql.model.LocationInfo;
 
 import java.io.IOException;
 
-public class SearchResultByLocationSerializer extends StdSerializer<SearchResultByLocation> {
+public class LocationInfoByLocationSerializer extends StdSerializer<LocationInfoByLocation> {
 
-    public SearchResultByLocationSerializer() {
+    public LocationInfoByLocationSerializer() {
         this(null);
     }
 
-    public SearchResultByLocationSerializer(Class<SearchResultByLocation> result) {
-        super(result);
+    public LocationInfoByLocationSerializer(Class<LocationInfoByLocation> locationInfoByLocationClass) {
+        super(locationInfoByLocationClass);
     }
 
-
     @Override
-    public void serialize(SearchResultByLocation value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+    public void serialize(LocationInfoByLocation value, JsonGenerator gen, SerializerProvider provider) throws IOException {
         gen.writeStartObject();
-        gen.writeFieldName(value.getLocationQuery());
+        gen.writeFieldName(value.getLocation());
         gen.writeStartArray();
         for (LocationInfo locationInfo : value.getResult()) {
             gen.writeStartObject();
@@ -35,4 +35,6 @@ public class SearchResultByLocationSerializer extends StdSerializer<SearchResult
         gen.writeEndArray();
         gen.writeEndObject();
     }
+
+
 }
