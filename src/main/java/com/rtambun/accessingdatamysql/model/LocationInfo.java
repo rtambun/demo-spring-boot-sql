@@ -10,21 +10,30 @@ import lombok.Setter;
 import lombok.Getter;
 
 @Entity
-@Setter @Getter @NoArgsConstructor
+@Setter @Getter
 @Table(name = "locationinfo")
 public class LocationInfo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
 
     private String location;
 
-    private float latitude;
+    private double latitude;
 
-    private float longitude;
+    private double longitude;
+
+    public LocationInfo() {}
+
+    public LocationInfo (String name, String location, double latitude, double longitude) {
+        this.name = name;
+        this.location = location;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 
     public String toString() {
         ObjectMapper mapper = new ObjectMapper();
